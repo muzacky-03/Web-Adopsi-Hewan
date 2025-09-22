@@ -1,0 +1,708 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header & Navbar */
+header {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #4a00e010;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.navbar .logo {
+    font-size: 2em;
+    font-weight: 700;
+    background: linear-gradient(90deg, #4a00e0, #8e2de2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    font-size: 1.05em;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #4a00e0;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #4a00e0;
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc8, #c2e9fb);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.hero > div {
+    flex: 1;
+    padding: 20px;
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    color: #4a00e0;
+    margin-bottom: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #444;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero .btn {
+    background: #4a00e0;
+    color: white;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 6px 15px rgba(74, 0, 224, 0.3);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.hero .btn:hover {
+    background: #3a00b0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74, 0, 224, 0.4);
+}
+
+.hero img {
+    width: 320px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.05);
+}
+
+/* Wave SVG */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234a00e0" fill-opacity="0.2" d="M0,192L48,176C96,160,192,128,288,128C384,128,480,160,576,176C672,192,768,192,864,192C960,192,1056,192,1152,176C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+/* Catalog */
+.catalog {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catalog h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a00e0;
+    font-weight: 600;
+}
+
+.catalog p {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.kucing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.kucing-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.kucing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-color: #4a00e030;
+}
+
+.kucing-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.kucing-card:hover img {
+    transform: scale(1.05);
+}
+
+.kucing-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.kucing-info h3 {
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    color: #4a00e0;
+    font-weight: 600;
+}
+
+.kucing-info p {
+    margin-bottom: 12px;
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.kucing-info .btn {
+    background: #4a00e0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.kucing-info .btn:hover {
+    background: #3a00b0;
+    transform: scale(1.03);
+}
+
+/* Form Rehome */
+.rehome-form {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e0e0e0;
+}
+
+.rehome-form h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #4a00e0;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.rehome-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+    font-size: 1em;
+}
+
+.rehome-form input,
+.rehome-form textarea,
+.rehome-form select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.rehome-form input:focus,
+.rehome-form textarea:focus,
+.rehome-form select:focus {
+    outline: none;
+    border-color: #4a00e0;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(74, 0, 224, 0.1);
+}
+
+.rehome-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.rehome-form .btn {
+    background: #4a00e0;
+    color: white;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 6px 15px rgba(74, 0, 224, 0.3);
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+}
+
+.rehome-form .btn:hover {
+    background: #3a00b0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74, 0, 224, 0.4);
+}
+
+/* History & Profile */
+.history-container,
+.profile-container {
+    padding: 70px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.history-container h2,
+.profile-container h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a00e0;
+    font-weight: 600;
+}
+
+.history-item {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #4a00e0;
+    transition: transform 0.3s ease;
+}
+
+.history-item:hover {
+    transform: translateX(5px);
+}
+
+.history-item h4 {
+    color: #4a00e0;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.history-item p {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+
+
+/* Footer */
+footer {
+    background: #4a00e0;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    font-size: 1em;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #a8e6cf;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Responsif */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero img {
+        width: 250px;
+        margin-top: 30px;
+    }
+
+    .kucing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .rehome-form, .history-container, .catalog {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        gap: 15px;
+        font-size: 0.9em;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero .btn {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+
+    .rehome-form {
+        padding: 30px 20px;
+    }
+}
+
+/* ========================
+   LOGIN / REGISTER PAGE
+======================== */
+.login-register-container {
+    display: flex;
+    min-height: 100vh;
+    background: #f8f9fa;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Bagian Ilustrasi */
+.login-illustration {
+    flex: 1;
+    background: linear-gradient(135deg, #a8e6cf, #c2e9fb);
+    position: relative;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-illustration::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><path d="M0,200 C100,150 200,150 300,200 L300,300 L0,300 Z" fill="#4a00e0" opacity="0.3"/><circle cx="150" cy="150" r="70" fill="#8e2de2" opacity="0.4"/><circle cx="250" cy="150" r="60" fill="#4a00e0" opacity="0.3"/><ellipse cx="180" cy="200" rx="120" ry="40" fill="#a8e6cf" opacity="0.2"/><rect x="100" y="200" width="200" height="50" fill="#c2e9fb" opacity="0.1"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.login-illustration h1 {
+    position: relative;
+    z-index: 2;
+    color: #4a00e0;
+    font-size: 2.5em;
+    text-align: center;
+    padding: 40px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+}
+
+.login-illustration p {
+    position: relative;
+    z-index: 2;
+    color: #333;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0 40px;
+    opacity: 0.9;
+}
+
+/* Bagian Form */
+.login-form {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background: white;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+    text-align: center;
+    color: #4a00e0;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.login-box .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.login-box input,
+.login-box select,
+.login-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.login-box input:focus,
+.login-box select:focus,
+.login-box textarea:focus {
+    outline: none;
+    border-color: #4a00e0;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(74, 0, 224, 0.1);
+}
+
+.login-box .btn {
+    background: #4a00e0;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 6px 15px rgba(74, 0, 224, 0.3);
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-box .btn:hover {
+    background: #3a00b0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74, 0, 224, 0.4);
+}
+
+.login-box .footer-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.login-box .footer-link a {
+    color: #4a00e0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-box .footer-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .login-register-container {
+        flex-direction: column;
+    }
+
+    .login-illustration {
+        border-radius: 20px;
+        margin-bottom: 20px;
+        height: 250px;
+    }
+
+    .login-illustration h1 {
+        font-size: 2em;
+    }
+
+    .login-illustration p {
+        font-size: 1em;
+    }
+
+    .login-box {
+        border-radius: 12px;
+    }
+}
+
+/* === RIwayat Serahkan Kucing === */
+.rehome-history-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 10px;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.rehome-rest-item:hover {
+    transform: translateYY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.rehome-illustration {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #4a00e0;
+    position: relative;
+    z-index: 1;
+}
+
+.rehome-illustration::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4a00e0, #8e2de2);
+    border-radius: 2px 0 0 2px;
+    z-index: -1;
+}
+
+.rehome-info {
+    flex: 1;
+}
+
+.rehome-name {
+    font-size: 1.1em;
+    color: #4a00e0;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-decoration: none;
+}
+
+.rehome-jenis {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.rehome-status {
+    font-size: 0.9em;
+    color: #28a745;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.rehome-submitted {
+    font-size: 0.9em;
+    color: #555;
+}
